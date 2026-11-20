@@ -1,20 +1,20 @@
+
 name: Hello pipeline
 
 on:
   push:
     branches: [main]
 
-    jobs:  
-      say-hello:
-      runs-on: ubntu-latest
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+
     steps:
-        - name: Get the code
-          uses: actions/checkout@v4
+      - name: Get the code
+        uses: actions/checkout@v4
 
-        - name: print a message
-          run: echo "Build triggered by ${{github.actor }}"
+      - name: Print a message
+        run: echo "Build triggered by ${{ github.actor }}"
 
-        - name: List the repo files
+      - name: List the repo files
         run: ls -la
-        
-        
